@@ -1,0 +1,104 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FutbolServisi WSDL service -->
+
+  <service name="FutbolServisiSOAP" provider="java:RPC" style="rpc" use="literal">
+      <parameter name="wsdlTargetNamespace" value="deneme"/>
+      <parameter name="wsdlServiceElement" value="FutbolServisi"/>
+      <parameter name="schemaQualified" value="deneme"/>
+      <parameter name="wsdlServicePort" value="FutbolServisiSOAP"/>
+      <parameter name="className" value="deneme.FutbolServisiSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="FutbolServisi"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <arrayMapping
+        xmlns:ns="deneme"
+        qname="ns:FutbolcuDizisi"
+        type="java:deneme.FutbolcuTipi[]"
+        innerType="cmp-ns:FutbolcuTipi" xmlns:cmp-ns="deneme"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:>FutbolcuTipi>FormaNumarasi"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:>TakimTipi>TakimAdi"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:KarsilasmaTipi"
+        type="java:deneme.KarsilasmaTipi"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:>FutbolcuTipi>TakimKodu"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="deneme"
+        qname="ns:KarsilasmaDizisi"
+        type="java:deneme.KarsilasmaTipi[]"
+        innerType="cmp-ns:KarsilasmaTipi" xmlns:cmp-ns="deneme"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:TakimTipi"
+        type="java:deneme.TakimTipi"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:FutbolcuTipi"
+        type="java:deneme.FutbolcuTipi"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:>FutbolcuTipi>AdSoyad"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="deneme"
+        qname="ns:>TakimTipi>TakimKodu"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

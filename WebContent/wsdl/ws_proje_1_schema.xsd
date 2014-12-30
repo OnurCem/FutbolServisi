@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="deneme" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="deneme">
+	<!-- Web servisin icerdigi elementlerin isimleri ve tipleri -->
+	<xsd:element name="Futbolcu" type="tns:FutbolcuTipi"/>
+	<xsd:element name="TakimBilgisi" type="tns:TakimTipi"/>
+	<xsd:element name="KarsilasmaBilgisi" type="tns:KarsilasmaTipi"/>
+	<xsd:element name="Karsilasmalar" type="tns:KarsilasmaDizisi"/>
+	<!-- Futbolcu kompleks tipi -->
+	<xsd:complexType name="FutbolcuTipi">
+		<xsd:all>
+			<!-- Futbolcunun bilgilerinin tam olarak bir kere olmasi gerektigi icin all etiketi kullandik. -->
+			<!-- Futbolcu kompleks tipinin icerdigi basit tipteki elementler. -->
+			<xsd:element name="AdSoyad">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="20"/>
+						<!-- String uzunluk kisitlamasi -->
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TakimKodu">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+						<xsd:minInclusive value="1"/>
+						<xsd:maxInclusive value="99"/>
+						<!-- Tam sayi deger araligi kisitlamasi -->
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="FormaNumarasi">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+						<xsd:minInclusive value="1"/>
+						<xsd:maxInclusive value="99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="AttigiGolSayisi" type="xsd:int"/>
+		</xsd:all>
+	</xsd:complexType>
+	<!-- Takim bilgisini tutan kompleks tip -->
+	<xsd:complexType name="TakimTipi">
+		<xsd:all>
+			<xsd:element name="TakimAdi">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="20"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TakimKodu">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int">
+						<xsd:minInclusive value="1"/>
+						<xsd:maxInclusive value="99"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="GalibiyetSayisi" type="xsd:int"/>
+			<xsd:element name="BeraberlikSayisi" type="xsd:int"/>
+			<xsd:element name="MaglubiyetSayisi" type="xsd:int"/>
+			<xsd:element name="AttigiGolSayisi" type="xsd:int"/>
+			<xsd:element name="YedigiGolSayisi" type="xsd:int"/>
+			<xsd:element name="Futbolcular" type="tns:FutbolcuDizisi"/>
+			<!-- Futbolcular dizi olacagi icin FutbolcuDizisi adinda yeni bir kompleks tip tanimladik. -->
+		</xsd:all>
+		<!-- Futbolcu dizisi tanimi -->
+	</xsd:complexType>
+	<xsd:complexType name="FutbolcuDizisi">
+		<xsd:sequence>
+			<!-- Elementler bir sira halinde pespese olacagi icin sequence etiketi icine FutbolcuTipi tipinde element tanimladik. -->
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Futbolcu" type="tns:FutbolcuTipi"/>
+			<!-- Dizi oldugu icin ust limiti sinirsiz biraktik. -->
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Karsilasma bilgisi kompleks tipi -->
+	<xsd:complexType name="KarsilasmaTipi">
+		<xsd:all>
+			<xsd:element name="HaftaNo" type="xsd:int"/>
+			<xsd:element name="EvSahibiTakim" type="tns:TakimTipi"/>
+			<xsd:element name="MisafirTakim" type="tns:TakimTipi"/>
+			<xsd:element name="EvSahibiTakimGolSayisi" type="xsd:int"/>
+			<xsd:element name="MisafirTakimGolSayisi" type="xsd:int"/>
+		</xsd:all>
+	</xsd:complexType>
+	<!-- Metodumuzun geri dondurdugu karsilasma bilgisinin dizi olmasi gerektigi icin burada KarsilasmaBilgisi tipinde dizi tanimlamasi yaptik. -->
+	<xsd:complexType name="KarsilasmaDizisi">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="KarsilasmaBilgisi" type="tns:KarsilasmaTipi"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
