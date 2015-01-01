@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package deneme;
+package FutbolServisi_pkg;
 
-public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service implements deneme.FutbolServisi_Service {
+public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service implements FutbolServisi_pkg.FutbolServisi_Service {
 
     public FutbolServisi_ServiceLocator() {
     }
@@ -22,7 +22,7 @@ public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service
     }
 
     // Use to get a proxy class for FutbolServisiSOAP
-    private java.lang.String FutbolServisiSOAP_address = "http://localhost:8080/WSProje/services/FutbolServisiSOAP";
+    private java.lang.String FutbolServisiSOAP_address = "http://tempuri.org";
 
     public java.lang.String getFutbolServisiSOAPAddress() {
         return FutbolServisiSOAP_address;
@@ -39,7 +39,7 @@ public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service
         FutbolServisiSOAPWSDDServiceName = name;
     }
 
-    public deneme.FutbolServisi_PortType getFutbolServisiSOAP() throws javax.xml.rpc.ServiceException {
+    public FutbolServisi_pkg.FutbolServisi_PortType getFutbolServisiSOAP() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(FutbolServisiSOAP_address);
@@ -50,9 +50,9 @@ public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service
         return getFutbolServisiSOAP(endpoint);
     }
 
-    public deneme.FutbolServisi_PortType getFutbolServisiSOAP(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public FutbolServisi_pkg.FutbolServisi_PortType getFutbolServisiSOAP(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            deneme.FutbolServisiSOAPStub _stub = new deneme.FutbolServisiSOAPStub(portAddress, this);
+            FutbolServisi_pkg.FutbolServisiSOAPStub _stub = new FutbolServisi_pkg.FutbolServisiSOAPStub(portAddress, this);
             _stub.setPortName(getFutbolServisiSOAPWSDDServiceName());
             return _stub;
         }
@@ -72,8 +72,8 @@ public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (deneme.FutbolServisi_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                deneme.FutbolServisiSOAPStub _stub = new deneme.FutbolServisiSOAPStub(new java.net.URL(FutbolServisiSOAP_address), this);
+            if (FutbolServisi_pkg.FutbolServisi_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                FutbolServisi_pkg.FutbolServisiSOAPStub _stub = new FutbolServisi_pkg.FutbolServisiSOAPStub(new java.net.URL(FutbolServisiSOAP_address), this);
                 _stub.setPortName(getFutbolServisiSOAPWSDDServiceName());
                 return _stub;
             }
@@ -105,7 +105,7 @@ public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("deneme", "FutbolServisi");
+        return new javax.xml.namespace.QName("FutbolServisi", "FutbolServisi");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class FutbolServisi_ServiceLocator extends org.apache.axis.client.Service
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("deneme", "FutbolServisiSOAP"));
+            ports.add(new javax.xml.namespace.QName("FutbolServisi", "FutbolServisiSOAP"));
         }
         return ports.iterator();
     }

@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package deneme;
+package FutbolServisi_pkg;
 
-public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implements deneme.FutbolServisi_PortType {
+public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implements FutbolServisi_pkg.FutbolServisi_PortType {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -24,16 +24,14 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("KarsilasmaBilgisiGetir");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNumarasi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("KarsilasmaGetir");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("deneme", "KarsilasmaDizisi"));
-        oper.setReturnClass(deneme.KarsilasmaTipi[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "KarsilasmaBilgisi"));
-        param = oper.getReturnParamDesc();
-        param.setItemQName(new javax.xml.namespace.QName("deneme", "KarsilasmaBilgisi"));
+        oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "KarsilasmaYaniti"));
+        oper.setReturnClass(FutbolServisi_pkg.KarsilasmaYaniti.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "KarsilasmaGetirYaniti"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -42,14 +40,14 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimAdi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "Futbolcular"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("deneme", "FutbolcuDizisi"), deneme.FutbolcuTipi[].class, false, false);
-        param.setItemQName(new javax.xml.namespace.QName("deneme", "Futbolcu"));
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "Futbolcular"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("FutbolServisi", "Futbolcular"), FutbolServisi_pkg.Futbolcu[].class, false, false);
+        param.setItemQName(new javax.xml.namespace.QName("FutbolServisi", "Futbolcu"));
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "TakimKayitBilgisi"));
+        oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "ServisYaniti"));
+        oper.setReturnClass(FutbolServisi_pkg.ServisYaniti.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "TakimKaydetYaniti"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -64,11 +62,11 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "MisafirGolSayisi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "KarsilasmaKayitBilgisi"));
+        oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "ServisYaniti"));
+        oper.setReturnClass(FutbolServisi_pkg.ServisYaniti.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "KarsilasmaKaydetYaniti"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
@@ -81,22 +79,22 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GolSayisi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        oper.setReturnClass(boolean.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "KarsilasmaKayitBilgisi"));
+        oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "ServisYaniti"));
+        oper.setReturnClass(FutbolServisi_pkg.ServisYaniti.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GolSayisiKaydetYaniti"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("TakimBilgisiGetir");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNumarasi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("TakimGetir");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("deneme", "TakimTipi"));
-        oper.setReturnClass(deneme.TakimTipi.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "TakimBilgisi"));
+        oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "TakimYaniti"));
+        oper.setReturnClass(FutbolServisi_pkg.TakimYaniti.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "TakimGetirYaniti"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[4] = oper;
 
     }
@@ -130,76 +128,97 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("deneme", ">FutbolcuTipi>AdSoyad");
+            qName = new javax.xml.namespace.QName("FutbolServisi", ">Futbolcu>AdSoyad");
             cachedSerQNames.add(qName);
             cls = java.lang.String.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
-            qName = new javax.xml.namespace.QName("deneme", ">FutbolcuTipi>FormaNumarasi");
+            qName = new javax.xml.namespace.QName("FutbolServisi", ">Futbolcu>FormaNumarasi");
             cachedSerQNames.add(qName);
             cls = int.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
-            qName = new javax.xml.namespace.QName("deneme", ">FutbolcuTipi>TakimKodu");
+            qName = new javax.xml.namespace.QName("FutbolServisi", ">Futbolcu>TakimKodu");
             cachedSerQNames.add(qName);
             cls = int.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
-            qName = new javax.xml.namespace.QName("deneme", ">TakimTipi>TakimAdi");
+            qName = new javax.xml.namespace.QName("FutbolServisi", ">Takim>TakimAdi");
             cachedSerQNames.add(qName);
             cls = java.lang.String.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
-            qName = new javax.xml.namespace.QName("deneme", ">TakimTipi>TakimKodu");
+            qName = new javax.xml.namespace.QName("FutbolServisi", ">Takim>TakimKodu");
             cachedSerQNames.add(qName);
             cls = int.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
-            qName = new javax.xml.namespace.QName("deneme", "FutbolcuDizisi");
+            qName = new javax.xml.namespace.QName("FutbolServisi", "Futbolcu");
             cachedSerQNames.add(qName);
-            cls = deneme.FutbolcuTipi[].class;
-            cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("deneme", "FutbolcuTipi");
-            qName2 = new javax.xml.namespace.QName("deneme", "Futbolcu");
-            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
-            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
-
-            qName = new javax.xml.namespace.QName("deneme", "FutbolcuTipi");
-            cachedSerQNames.add(qName);
-            cls = deneme.FutbolcuTipi.class;
+            cls = FutbolServisi_pkg.Futbolcu.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("deneme", "KarsilasmaDizisi");
+            qName = new javax.xml.namespace.QName("FutbolServisi", "Futbolcular");
             cachedSerQNames.add(qName);
-            cls = deneme.KarsilasmaTipi[].class;
+            cls = FutbolServisi_pkg.Futbolcu[].class;
             cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("deneme", "KarsilasmaTipi");
-            qName2 = new javax.xml.namespace.QName("deneme", "KarsilasmaBilgisi");
+            qName = new javax.xml.namespace.QName("FutbolServisi", "Futbolcu");
+            qName2 = new javax.xml.namespace.QName("FutbolServisi", "Futbolcu");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-            qName = new javax.xml.namespace.QName("deneme", "KarsilasmaTipi");
+            qName = new javax.xml.namespace.QName("FutbolServisi", "Karsilasma");
             cachedSerQNames.add(qName);
-            cls = deneme.KarsilasmaTipi.class;
+            cls = FutbolServisi_pkg.Karsilasma.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("deneme", "TakimTipi");
+            qName = new javax.xml.namespace.QName("FutbolServisi", "Karsilasmalar");
             cachedSerQNames.add(qName);
-            cls = deneme.TakimTipi.class;
+            cls = FutbolServisi_pkg.Karsilasma[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("FutbolServisi", "Karsilasma");
+            qName2 = new javax.xml.namespace.QName("FutbolServisi", "Karsilasma");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("FutbolServisi", "KarsilasmaYaniti");
+            cachedSerQNames.add(qName);
+            cls = FutbolServisi_pkg.KarsilasmaYaniti.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("FutbolServisi", "ServisYaniti");
+            cachedSerQNames.add(qName);
+            cls = FutbolServisi_pkg.ServisYaniti.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("FutbolServisi", "Takim");
+            cachedSerQNames.add(qName);
+            cls = FutbolServisi_pkg.Takim.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("FutbolServisi", "TakimYaniti");
+            cachedSerQNames.add(qName);
+            cls = FutbolServisi_pkg.TakimYaniti.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -240,7 +259,8 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
             synchronized (this) {
                 if (firstCall()) {
                     // must set encoding style before registering serializers
-                    _call.setEncodingStyle(null);
+                    _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+                    _call.setEncodingStyle(org.apache.axis.Constants.URI_SOAP11_ENC);
                     for (int i = 0; i < cachedSerFactories.size(); ++i) {
                         java.lang.Class cls = (java.lang.Class) cachedSerClasses.get(i);
                         javax.xml.namespace.QName qName =
@@ -270,23 +290,20 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         }
     }
 
-    public KarsilasmaDizisi karsilasmaBilgisiGetir(int takimNumarasi) throws java.rmi.RemoteException {
+    public FutbolServisi_pkg.KarsilasmaYaniti karsilasmaGetir(int takimNo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[0]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://tempuri.org/FutbolServisi/KarsilasmaBilgisiGetir");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPActionURI("http://tempuri.org/FutbolServisi/KarsilasmaGetir");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("", "KarsilasmaBilgisiGetir"));
+        _call.setOperationName(new javax.xml.namespace.QName("FutbolServisi", "KarsilasmaGetir"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(takimNumarasi)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(takimNo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -294,9 +311,9 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         else {
             extractAttachments(_call);
             try {
-                return (KarsilasmaDizisi) _resp;
+                return (FutbolServisi_pkg.KarsilasmaYaniti) _resp;
             } catch (java.lang.Exception _exception) {
-                return (KarsilasmaDizisi) org.apache.axis.utils.JavaUtils.convert(_resp, KarsilasmaDizisi.class);
+                return (FutbolServisi_pkg.KarsilasmaYaniti) org.apache.axis.utils.JavaUtils.convert(_resp, FutbolServisi_pkg.KarsilasmaYaniti.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -304,7 +321,7 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
 }
     }
 
-    public boolean takimKaydet(int takimNo, java.lang.String takimAdi, deneme.FutbolcuTipi[] futbolcular) throws java.rmi.RemoteException {
+    public FutbolServisi_pkg.ServisYaniti takimKaydet(int takimNo, java.lang.String takimAdi, FutbolServisi_pkg.Futbolcu[] futbolcular) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -312,11 +329,8 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         _call.setOperation(_operations[1]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://tempuri.org/FutbolServisi/TakimKaydet");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("", "TakimKaydet"));
+        _call.setOperationName(new javax.xml.namespace.QName("FutbolServisi", "TakimKaydet"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -328,9 +342,9 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Boolean) _resp).booleanValue();
+                return (FutbolServisi_pkg.ServisYaniti) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+                return (FutbolServisi_pkg.ServisYaniti) org.apache.axis.utils.JavaUtils.convert(_resp, FutbolServisi_pkg.ServisYaniti.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -338,7 +352,7 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
 }
     }
 
-    public boolean karsilasmaKaydet(int haftaNo, int evSahibiTakimNo, int misafirTakimNo, int evSahibiGolSayisi, int misafirGolSayisi) throws java.rmi.RemoteException {
+    public FutbolServisi_pkg.ServisYaniti karsilasmaKaydet(int haftaNo, int evSahibiTakimNo, int misafirTakimNo, int evSahibiGolSayisi, int misafirGolSayisi) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -346,11 +360,8 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://tempuri.org/FutbolServisi/KarsilasmaKaydet");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("", "KarsilasmaKaydet"));
+        _call.setOperationName(new javax.xml.namespace.QName("FutbolServisi", "KarsilasmaKaydet"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -362,9 +373,9 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Boolean) _resp).booleanValue();
+                return (FutbolServisi_pkg.ServisYaniti) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+                return (FutbolServisi_pkg.ServisYaniti) org.apache.axis.utils.JavaUtils.convert(_resp, FutbolServisi_pkg.ServisYaniti.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -372,7 +383,7 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
 }
     }
 
-    public boolean golSayisiKaydet(int haftaNo, int takimNo, int formaNo, int golSayisi) throws java.rmi.RemoteException {
+    public FutbolServisi_pkg.ServisYaniti golSayisiKaydet(int haftaNo, int takimNo, int formaNo, int golSayisi) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -380,11 +391,8 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://tempuri.org/FutbolServisi/GolSayisiKaydet");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("", "GolSayisiKaydet"));
+        _call.setOperationName(new javax.xml.namespace.QName("FutbolServisi", "GolSayisiKaydet"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -396,9 +404,9 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         else {
             extractAttachments(_call);
             try {
-                return ((java.lang.Boolean) _resp).booleanValue();
+                return (FutbolServisi_pkg.ServisYaniti) _resp;
             } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+                return (FutbolServisi_pkg.ServisYaniti) org.apache.axis.utils.JavaUtils.convert(_resp, FutbolServisi_pkg.ServisYaniti.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -406,23 +414,20 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
 }
     }
 
-    public deneme.TakimTipi takimBilgisiGetir(int takimNumarasi) throws java.rmi.RemoteException {
+    public FutbolServisi_pkg.TakimYaniti takimGetir(int takimNo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://tempuri.org/FutbolServisi/TakimBilgisiGetir");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPActionURI("http://tempuri.org/FutbolServisi/TakimGetir");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("", "TakimBilgisiGetir"));
+        _call.setOperationName(new javax.xml.namespace.QName("FutbolServisi", "TakimGetir"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(takimNumarasi)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(takimNo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -430,9 +435,9 @@ public class FutbolServisiSOAPStub extends org.apache.axis.client.Stub implement
         else {
             extractAttachments(_call);
             try {
-                return (deneme.TakimTipi) _resp;
+                return (FutbolServisi_pkg.TakimYaniti) _resp;
             } catch (java.lang.Exception _exception) {
-                return (deneme.TakimTipi) org.apache.axis.utils.JavaUtils.convert(_resp, deneme.TakimTipi.class);
+                return (FutbolServisi_pkg.TakimYaniti) org.apache.axis.utils.JavaUtils.convert(_resp, FutbolServisi_pkg.TakimYaniti.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

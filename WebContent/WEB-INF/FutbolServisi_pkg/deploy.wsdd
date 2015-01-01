@@ -1,0 +1,128 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FutbolServisi WSDL service -->
+
+  <service name="FutbolServisiSOAP" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="FutbolServisi"/>
+      <parameter name="wsdlServiceElement" value="FutbolServisi"/>
+      <parameter name="schemaQualified" value="FutbolServisi"/>
+      <parameter name="wsdlServicePort" value="FutbolServisiSOAP"/>
+      <parameter name="className" value="FutbolServisi_pkg.FutbolServisiSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="FutbolServisi"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:>Futbolcu>TakimKodu"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:>Futbolcu>AdSoyad"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:Karsilasmalar"
+        type="java:FutbolServisi_pkg.Karsilasma[]"
+        innerType="cmp-ns:Karsilasma" xmlns:cmp-ns="FutbolServisi"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:Takim"
+        type="java:FutbolServisi_pkg.Takim"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:Futbolcular"
+        type="java:FutbolServisi_pkg.Futbolcu[]"
+        innerType="cmp-ns:Futbolcu" xmlns:cmp-ns="FutbolServisi"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:>Futbolcu>FormaNumarasi"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:>Takim>TakimKodu"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:KarsilasmaYaniti"
+        type="java:FutbolServisi_pkg.KarsilasmaYaniti"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:Karsilasma"
+        type="java:FutbolServisi_pkg.Karsilasma"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:ServisYaniti"
+        type="java:FutbolServisi_pkg.ServisYaniti"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:TakimYaniti"
+        type="java:FutbolServisi_pkg.TakimYaniti"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:Futbolcu"
+        type="java:FutbolServisi_pkg.Futbolcu"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="FutbolServisi"
+        qname="ns:>Takim>TakimAdi"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>

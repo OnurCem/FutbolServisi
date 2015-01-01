@@ -1,129 +1,163 @@
-<wsdl:definitions xmlns:tns="deneme" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="FutbolServisi" targetNamespace="deneme">
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Onur (Company) -->
+<wsdl:definitions xmlns:tns="FutbolServisi" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="FutbolServisi" targetNamespace="FutbolServisi">
 	<wsdl:types>
 		<!-- XML semamizi import etiketiyle WSDL dokumanina ekliyoruz. Semada kullandigimiz namespace'i import etiketinin namespace kismina yaziyoruz. -->
 		<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
-			<import namespace="deneme" schemaLocation="ws_proje_1_schema.xsd"/>
+			<import namespace="FutbolServisi" schemaLocation="ws_proje_1_schema.xsd"/>
 		</xsd:schema>
 		<!-- Metodumuzun geri dondurdugu karsilasma bilgisinin dizi olmasi gerektigi icin burada KarsilasmaBilgisi tipinde dizi tanimlamasi yaptik. -->
 	</wsdl:types>
-	<wsdl:message name="TakimNumarasiMesaji">
-		<wsdl:part name="TakimNumarasi" type="xsd:int"/>
-	</wsdl:message>
-	<wsdl:message name="KarsilasmaBilgisiMesaji">
-		<wsdl:part name="KarsilasmaBilgisi" type="tns:KarsilasmaDizisi"/>
-	</wsdl:message>
-	<wsdl:message name="TakimMesaji">
+	<wsdl:message name="TakimGetir">
 		<wsdl:part name="TakimNo" type="xsd:int"/>
-		<wsdl:part name="TakimAdi" type="xsd:string"/>
-		<wsdl:part name="Futbolcular" type="tns:FutbolcuDizisi"/>
 	</wsdl:message>
-	<wsdl:message name="TakimKayitBilgisiMesaji">
-		<wsdl:part name="TakimKayitBilgisi" type="xsd:boolean"/>
+	<wsdl:message name="TakimGetirYaniti">
+		<wsdl:part name="TakimGetirYaniti" type="tns:TakimYaniti"/>
 	</wsdl:message>
-	<wsdl:message name="KarsilasmaKayitMesaji">
+	<wsdl:message name="KarsilasmaGetir">
+		<wsdl:part name="TakimNo" type="xsd:int"/>
+	</wsdl:message>
+	<wsdl:message name="KarsilasmaGetirYaniti">
+		<wsdl:part name="KarsilasmaGetirYaniti" type="tns:KarsilasmaYaniti"/>
+	</wsdl:message>
+	<wsdl:message name="KarsilasmaKaydet">
 		<wsdl:part name="HaftaNo" type="xsd:int"/>
 		<wsdl:part name="EvSahibiTakimNo" type="xsd:int"/>
 		<wsdl:part name="MisafirTakimNo" type="xsd:int"/>
 		<wsdl:part name="EvSahibiGolSayisi" type="xsd:int"/>
 		<wsdl:part name="MisafirGolSayisi" type="xsd:int"/>
 	</wsdl:message>
-	<wsdl:message name="KarsilasmaKayitBilgisiMesaji">
-		<wsdl:part name="KarsilasmaKayitBilgisi" type="xsd:boolean"/>
+	<wsdl:message name="KarsilasmaKaydetYaniti">
+		<wsdl:part name="KarsilasmaKaydetYaniti" type="tns:ServisYaniti"/>
 	</wsdl:message>
-	<wsdl:message name="GolSayisiKayitMesaji">
+	<wsdl:message name="GolSayisiKaydet">
 		<wsdl:part name="HaftaNo" type="xsd:int"/>
 		<wsdl:part name="TakimNo" type="xsd:int"/>
 		<wsdl:part name="FormaNo" type="xsd:int"/>
 		<wsdl:part name="GolSayisi" type="xsd:int"/>
 	</wsdl:message>
-	<wsdl:message name="GolSayisiKayitBilgisiMesaji">
-		<wsdl:part name="KarsilasmaKayitBilgisi" type="xsd:boolean"/>
+	<wsdl:message name="GolSayisiKaydetYaniti">
+		<wsdl:part name="GolSayisiKaydetYaniti" type="tns:ServisYaniti"/>
 	</wsdl:message>
-	<wsdl:message name="TakimBilgisiMesaji">
-		<wsdl:part name="TakimBilgisi" type="tns:TakimTipi"/>
+	<wsdl:message name="TakimKaydet">
+		<wsdl:part name="TakimNo" type="xsd:int"/>
+		<wsdl:part name="TakimAdi" type="xsd:string"/>
+		<wsdl:part name="Futbolcular" type="tns:Futbolcular"/>
+	</wsdl:message>
+	<wsdl:message name="TakimKaydetYaniti">
+		<wsdl:part name="TakimKaydetYaniti" type="tns:ServisYaniti"/>
 	</wsdl:message>
 	<wsdl:portType name="FutbolServisi">
-		<wsdl:operation name="KarsilasmaBilgisiGetir">
+		<wsdl:operation name="KarsilasmaGetir">
 			<!-- Metodun adi -->
-			<wsdl:input message="tns:TakimNumarasiMesaji"/>
+			<wsdl:input message="tns:KarsilasmaGetir"/>
 			<!-- Metodun aldigi parametre -->
-			<wsdl:output message="tns:KarsilasmaBilgisiMesaji"/>
+			<wsdl:output message="tns:KarsilasmaGetirYaniti"/>
 			<!-- Metodun geri dondurdugu mesaj -->
 		</wsdl:operation>
 		<wsdl:operation name="TakimKaydet">
 			<!-- Metodun adi -->
-			<wsdl:input message="tns:TakimMesaji"/>
+			<wsdl:input message="tns:TakimKaydet"/>
 			<!-- Metodun aldigi parametre -->
-			<wsdl:output message="tns:TakimKayitBilgisiMesaji"/>
+			<wsdl:output message="tns:TakimKaydetYaniti"/>
 			<!-- Metodun geri dondurdugu mesaj -->
 		</wsdl:operation>
 		<wsdl:operation name="KarsilasmaKaydet">
 			<!-- Metodun adi -->
-			<wsdl:input message="tns:KarsilasmaKayitMesaji"/>
+			<wsdl:input message="tns:KarsilasmaKaydet"/>
 			<!-- Metodun aldigi parametre -->
-			<wsdl:output message="tns:KarsilasmaKayitBilgisiMesaji"/>
+			<wsdl:output message="tns:KarsilasmaKaydetYaniti"/>
 			<!-- Metodun geri dondurdugu mesaj -->
 		</wsdl:operation>
 		<wsdl:operation name="GolSayisiKaydet">
 			<!-- Metodun adi -->
-			<wsdl:input message="tns:GolSayisiKayitMesaji"/>
+			<wsdl:input message="tns:GolSayisiKaydet"/>
 			<!-- Metodun aldigi parametre -->
-			<wsdl:output message="tns:GolSayisiKayitBilgisiMesaji"/>
+			<wsdl:output message="tns:GolSayisiKaydetYaniti"/>
 			<!-- Metodun geri dondurdugu mesaj -->
 		</wsdl:operation>
-		<wsdl:operation name="TakimBilgisiGetir">
+		<wsdl:operation name="TakimGetir">
 			<!-- Metodun adi -->
-			<wsdl:input message="tns:TakimNumarasiMesaji"/>
+			<wsdl:input message="tns:TakimGetir"/>
 			<!-- Metodun aldigi parametre -->
-			<wsdl:output message="tns:TakimBilgisiMesaji"/>
+			<wsdl:output message="tns:TakimGetirYaniti"/>
 			<!-- Metodun geri dondurdugu mesaj -->
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="FutbolServisiSOAP" type="tns:FutbolServisi">
 		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
-		<wsdl:operation name="KarsilasmaBilgisiGetir">
-			<soap:operation soapAction="http://tempuri.org/FutbolServisi/KarsilasmaBilgisiGetir"/>
+		<wsdl:operation name="KarsilasmaGetir">
+			<soap:operation soapAction="http://tempuri.org/FutbolServisi/KarsilasmaGetir"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="TakimKaydet">
 			<soap:operation soapAction="http://tempuri.org/FutbolServisi/TakimKaydet"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="KarsilasmaKaydet">
 			<soap:operation soapAction="http://tempuri.org/FutbolServisi/KarsilasmaKaydet"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="GolSayisiKaydet">
 			<soap:operation soapAction="http://tempuri.org/FutbolServisi/GolSayisiKaydet"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:output>
 		</wsdl:operation>
-		<wsdl:operation name="TakimBilgisiGetir">
-			<soap:operation soapAction="http://tempuri.org/FutbolServisi/TakimBilgisiGetir"/>
+		<wsdl:operation name="TakimGetir">
+			<soap:operation soapAction="http://tempuri.org/FutbolServisi/TakimGetir"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body
+		            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+		            namespace="FutbolServisi"
+		            use="encoded"/>
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>

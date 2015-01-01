@@ -1,13 +1,13 @@
 /**
- * FutbolcuTipi.java
+ * Futbolcu.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package deneme;
+package FutbolServisi_pkg;
 
-public class FutbolcuTipi  implements java.io.Serializable {
+public class Futbolcu  implements java.io.Serializable {
     private java.lang.String adSoyad;
 
     private int takimKodu;
@@ -16,10 +16,10 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
     private int attigiGolSayisi;
 
-    public FutbolcuTipi() {
+    public Futbolcu() {
     }
 
-    public FutbolcuTipi(
+    public Futbolcu(
            java.lang.String adSoyad,
            int takimKodu,
            int formaNumarasi,
@@ -28,38 +28,6 @@ public class FutbolcuTipi  implements java.io.Serializable {
            this.takimKodu = takimKodu;
            this.formaNumarasi = formaNumarasi;
            this.attigiGolSayisi = attigiGolSayisi;
-           
-           typeDesc.setXmlType(new javax.xml.namespace.QName("http://tempuri.org/", "adSoyad"));
-           org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-           elemField.setFieldName("adSoyad");
-           elemField.setXmlName(new javax.xml.namespace.QName("http://tempuri.org/", "adSoyad"));
-           elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-           elemField.setNillable(false);
-           typeDesc.addFieldDesc(elemField);
-           
-           typeDesc.setXmlType(new javax.xml.namespace.QName("http://tempuri.org/", "takimKodu"));
-           elemField = new org.apache.axis.description.ElementDesc();
-           elemField.setFieldName("takimKodu");
-           elemField.setXmlName(new javax.xml.namespace.QName("http://tempuri.org/", "takimKodu"));
-           elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-           elemField.setNillable(false);
-           typeDesc.addFieldDesc(elemField);
-           
-           typeDesc.setXmlType(new javax.xml.namespace.QName("http://tempuri.org/", "formaNumarasi"));
-           elemField = new org.apache.axis.description.ElementDesc();
-           elemField.setFieldName("formaNumarasi");
-           elemField.setXmlName(new javax.xml.namespace.QName("http://tempuri.org/", "formaNumarasi"));
-           elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-           elemField.setNillable(false);
-           typeDesc.addFieldDesc(elemField);
-           
-           typeDesc.setXmlType(new javax.xml.namespace.QName("http://tempuri.org/", "attigiGolSayisi"));
-           elemField = new org.apache.axis.description.ElementDesc();
-           elemField.setFieldName("attigiGolSayisi");
-           elemField.setXmlName(new javax.xml.namespace.QName("http://tempuri.org/", "attigiGolSayisi"));
-           elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-           elemField.setNillable(false);
-           typeDesc.addFieldDesc(elemField);
     }
 
     public void golSayisiGuncelle(int golSayisi) {
@@ -67,7 +35,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
     }
 
     /**
-     * Gets the adSoyad value for this FutbolcuTipi.
+     * Gets the adSoyad value for this Futbolcu.
      * 
      * @return adSoyad
      */
@@ -77,7 +45,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the adSoyad value for this FutbolcuTipi.
+     * Sets the adSoyad value for this Futbolcu.
      * 
      * @param adSoyad
      */
@@ -87,7 +55,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the takimKodu value for this FutbolcuTipi.
+     * Gets the takimKodu value for this Futbolcu.
      * 
      * @return takimKodu
      */
@@ -97,7 +65,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the takimKodu value for this FutbolcuTipi.
+     * Sets the takimKodu value for this Futbolcu.
      * 
      * @param takimKodu
      */
@@ -107,7 +75,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the formaNumarasi value for this FutbolcuTipi.
+     * Gets the formaNumarasi value for this Futbolcu.
      * 
      * @return formaNumarasi
      */
@@ -117,7 +85,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the formaNumarasi value for this FutbolcuTipi.
+     * Sets the formaNumarasi value for this Futbolcu.
      * 
      * @param formaNumarasi
      */
@@ -127,7 +95,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the attigiGolSayisi value for this FutbolcuTipi.
+     * Gets the attigiGolSayisi value for this Futbolcu.
      * 
      * @return attigiGolSayisi
      */
@@ -137,7 +105,7 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the attigiGolSayisi value for this FutbolcuTipi.
+     * Sets the attigiGolSayisi value for this Futbolcu.
      * 
      * @param attigiGolSayisi
      */
@@ -147,8 +115,8 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof FutbolcuTipi)) return false;
-        FutbolcuTipi other = (FutbolcuTipi) obj;
+        if (!(obj instanceof Futbolcu)) return false;
+        Futbolcu other = (Futbolcu) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -186,31 +154,31 @@ public class FutbolcuTipi  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(FutbolcuTipi.class, true);
+        new org.apache.axis.description.TypeDesc(Futbolcu.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("deneme", "FutbolcuTipi"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("FutbolServisi", "Futbolcu"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("adSoyad");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "AdSoyad"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "adSoyad"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("takimKodu");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "TakimKodu"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "takimKodu"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("formaNumarasi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "FormaNumarasi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "formaNumarasi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("attigiGolSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "AttigiGolSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "attigiGolSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

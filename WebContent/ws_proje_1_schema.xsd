@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Onur (Company) -->
 <!-- WSDL dokumaninda kullandigimiz namespace ile ayni olmali. -->
 <!-- Bu namespace'i tns oneki ile kullandik. -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="deneme" targetNamespace="deneme" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="FutbolServisi" targetNamespace="FutbolServisi" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- Web servisin icerdigi elementlerin isimleri ve tipleri -->
-	<xsd:element name="Futbolcu" type="tns:FutbolcuTipi"/>
-	<xsd:element name="TakimBilgisi" type="tns:TakimTipi"/>
-	<xsd:element name="KarsilasmaBilgisi" type="tns:KarsilasmaTipi"/>
-	<xsd:element name="Karsilasmalar" type="tns:KarsilasmaDizisi"/>
+	<xsd:element name="Futbolcu" type="tns:Futbolcu"/>
+	<xsd:element name="Futbolcular" type="tns:Futbolcular"/>
+	<xsd:element name="Takim" type="tns:Takim"/>
+	<xsd:element name="Karsilasma" type="tns:Karsilasma"/>
+	<xsd:element name="Karsilasmalar" type="tns:Karsilasmalar"/>
+	<xsd:element name="ServisYaniti" type="tns:ServisYaniti"/>
 	<!-- Futbolcu kompleks tipi -->
-	<xsd:complexType name="FutbolcuTipi">
+	<xsd:complexType name="Futbolcu">
 		<xsd:all>
 			<!-- Futbolcunun bilgilerinin tam olarak bir kere olmasi gerektigi icin all etiketi kullandik. -->
 			<!-- Futbolcu kompleks tipinin icerdigi basit tipteki elementler. -->
@@ -41,7 +44,7 @@
 		</xsd:all>
 	</xsd:complexType>
 	<!-- Takim bilgisini tutan kompleks tip -->
-	<xsd:complexType name="TakimTipi">
+	<xsd:complexType name="Takim">
 		<xsd:all>
 			<xsd:element name="TakimAdi">
 				<xsd:simpleType>
@@ -63,32 +66,54 @@
 			<xsd:element name="MaglubiyetSayisi" type="xsd:int"/>
 			<xsd:element name="AttigiGolSayisi" type="xsd:int"/>
 			<xsd:element name="YedigiGolSayisi" type="xsd:int"/>
-			<xsd:element name="Futbolcular" type="tns:FutbolcuDizisi"/>
+			<xsd:element name="Futbolcular" type="tns:Futbolcular"/>
 			<!-- Futbolcular dizi olacagi icin FutbolcuDizisi adinda yeni bir kompleks tip tanimladik. -->
 		</xsd:all>
 		<!-- Futbolcu dizisi tanimi -->
 	</xsd:complexType>
-	<xsd:complexType name="FutbolcuDizisi">
+	<xsd:complexType name="Futbolcular">
 		<xsd:sequence>
 			<!-- Elementler bir sira halinde pespese olacagi icin sequence etiketi icine FutbolcuTipi tipinde element tanimladik. -->
-			<xsd:element name="Futbolcu" type="tns:FutbolcuTipi" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Futbolcu" type="tns:Futbolcu" minOccurs="0" maxOccurs="unbounded"/>
 			<!-- Dizi oldugu icin ust limiti sinirsiz biraktik. -->
 		</xsd:sequence>
 	</xsd:complexType>
 	<!-- Karsilasma bilgisi kompleks tipi -->
-	<xsd:complexType name="KarsilasmaTipi">
+	<xsd:complexType name="Karsilasma">
 		<xsd:all>
 			<xsd:element name="HaftaNo" type="xsd:int"/>
-			<xsd:element name="EvSahibiTakim" type="tns:TakimTipi"/>
-			<xsd:element name="MisafirTakim" type="tns:TakimTipi"/>
+			<xsd:element name="EvSahibiTakim" type="tns:Takim"/>
+			<xsd:element name="MisafirTakim" type="tns:Takim"/>
 			<xsd:element name="EvSahibiTakimGolSayisi" type="xsd:int"/>
 			<xsd:element name="MisafirTakimGolSayisi" type="xsd:int"/>
 		</xsd:all>
 	</xsd:complexType>
 	<!-- Metodumuzun geri dondurdugu karsilasma bilgisinin dizi olmasi gerektigi icin burada KarsilasmaBilgisi tipinde dizi tanimlamasi yaptik. -->
-	<xsd:complexType name="KarsilasmaDizisi">
+	<xsd:complexType name="Karsilasmalar">
 		<xsd:sequence>
-			<xsd:element name="KarsilasmaBilgisi" type="tns:KarsilasmaTipi" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Karsilasma" type="tns:Karsilasma" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Servisimizin geri donus tipleri. -->
+	<xsd:complexType name="ServisYaniti">
+		<xsd:all>
+			<xsd:element name="Durum" type="xsd:boolean"/>
+			<xsd:element name="Mesaj" type="xsd:string"/>
+			<xsd:element name="Veri" type="xsd:string"/>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="TakimYaniti">
+		<xsd:all>
+			<xsd:element name="Durum" type="xsd:boolean"/>
+			<xsd:element name="Mesaj" type="xsd:string"/>
+			<xsd:element name="Takim" type="tns:Takim"/>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="KarsilasmaYaniti">
+		<xsd:all>
+			<xsd:element name="Durum" type="xsd:boolean"/>
+			<xsd:element name="Mesaj" type="xsd:string"/>
+			<xsd:element name="Karsilasmalar" type="tns:Karsilasmalar"/>
+		</xsd:all>
 	</xsd:complexType>
 </xsd:schema>

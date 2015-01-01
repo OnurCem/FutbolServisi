@@ -5,10 +5,10 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package deneme;
+package FutbolServisi_pkg;
 
-public class FutbolServisiSOAPSkeleton implements deneme.FutbolServisi_PortType, org.apache.axis.wsdl.Skeleton {
-    private deneme.FutbolServisi_PortType impl;
+public class FutbolServisiSOAPSkeleton implements FutbolServisi_pkg.FutbolServisi_PortType, org.apache.axis.wsdl.Skeleton {
+    private FutbolServisi_pkg.FutbolServisi_PortType impl;
     private static java.util.Map _myOperations = new java.util.Hashtable();
     private static java.util.Collection _myOperationsList = new java.util.ArrayList();
 
@@ -31,25 +31,25 @@ public class FutbolServisiSOAPSkeleton implements deneme.FutbolServisi_PortType,
         org.apache.axis.description.FaultDesc _fault;
         org.apache.axis.description.ParameterDesc [] _params;
         _params = new org.apache.axis.description.ParameterDesc [] {
-            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNumarasi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
         };
-        _oper = new org.apache.axis.description.OperationDesc("karsilasmaBilgisiGetir", _params, new javax.xml.namespace.QName("", "KarsilasmaBilgisi"));
-        _oper.setReturnType(new javax.xml.namespace.QName("deneme", "KarsilasmaDizisi"));
-        _oper.setElementQName(new javax.xml.namespace.QName("", "KarsilasmaBilgisiGetir"));
-        _oper.setSoapAction("http://tempuri.org/FutbolServisi/KarsilasmaBilgisiGetir");
+        _oper = new org.apache.axis.description.OperationDesc("karsilasmaGetir", _params, new javax.xml.namespace.QName("", "KarsilasmaGetirYaniti"));
+        _oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "KarsilasmaYaniti"));
+        _oper.setElementQName(new javax.xml.namespace.QName("FutbolServisi", "KarsilasmaGetir"));
+        _oper.setSoapAction("http://tempuri.org/FutbolServisi/KarsilasmaGetir");
         _myOperationsList.add(_oper);
-        if (_myOperations.get("karsilasmaBilgisiGetir") == null) {
-            _myOperations.put("karsilasmaBilgisiGetir", new java.util.ArrayList());
+        if (_myOperations.get("karsilasmaGetir") == null) {
+            _myOperations.put("karsilasmaGetir", new java.util.ArrayList());
         }
-        ((java.util.List)_myOperations.get("karsilasmaBilgisiGetir")).add(_oper);
+        ((java.util.List)_myOperations.get("karsilasmaGetir")).add(_oper);
         _params = new org.apache.axis.description.ParameterDesc [] {
             new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
             new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimAdi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false), 
-            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "Futbolcular"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("deneme", "FutbolcuDizisi"), deneme.FutbolcuTipi[].class, false, false), 
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "Futbolcular"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("FutbolServisi", "Futbolcular"), FutbolServisi_pkg.Futbolcu[].class, false, false), 
         };
-        _oper = new org.apache.axis.description.OperationDesc("takimKaydet", _params, new javax.xml.namespace.QName("", "TakimKayitBilgisi"));
-        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        _oper.setElementQName(new javax.xml.namespace.QName("", "TakimKaydet"));
+        _oper = new org.apache.axis.description.OperationDesc("takimKaydet", _params, new javax.xml.namespace.QName("", "TakimKaydetYaniti"));
+        _oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "ServisYaniti"));
+        _oper.setElementQName(new javax.xml.namespace.QName("FutbolServisi", "TakimKaydet"));
         _oper.setSoapAction("http://tempuri.org/FutbolServisi/TakimKaydet");
         _myOperationsList.add(_oper);
         if (_myOperations.get("takimKaydet") == null) {
@@ -63,9 +63,9 @@ public class FutbolServisiSOAPSkeleton implements deneme.FutbolServisi_PortType,
             new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "EvSahibiGolSayisi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
             new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "MisafirGolSayisi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
         };
-        _oper = new org.apache.axis.description.OperationDesc("karsilasmaKaydet", _params, new javax.xml.namespace.QName("", "KarsilasmaKayitBilgisi"));
-        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        _oper.setElementQName(new javax.xml.namespace.QName("", "KarsilasmaKaydet"));
+        _oper = new org.apache.axis.description.OperationDesc("karsilasmaKaydet", _params, new javax.xml.namespace.QName("", "KarsilasmaKaydetYaniti"));
+        _oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "ServisYaniti"));
+        _oper.setElementQName(new javax.xml.namespace.QName("FutbolServisi", "KarsilasmaKaydet"));
         _oper.setSoapAction("http://tempuri.org/FutbolServisi/KarsilasmaKaydet");
         _myOperationsList.add(_oper);
         if (_myOperations.get("karsilasmaKaydet") == null) {
@@ -78,9 +78,9 @@ public class FutbolServisiSOAPSkeleton implements deneme.FutbolServisi_PortType,
             new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "FormaNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
             new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "GolSayisi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
         };
-        _oper = new org.apache.axis.description.OperationDesc("golSayisiKaydet", _params, new javax.xml.namespace.QName("", "KarsilasmaKayitBilgisi"));
-        _oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        _oper.setElementQName(new javax.xml.namespace.QName("", "GolSayisiKaydet"));
+        _oper = new org.apache.axis.description.OperationDesc("golSayisiKaydet", _params, new javax.xml.namespace.QName("", "GolSayisiKaydetYaniti"));
+        _oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "ServisYaniti"));
+        _oper.setElementQName(new javax.xml.namespace.QName("FutbolServisi", "GolSayisiKaydet"));
         _oper.setSoapAction("http://tempuri.org/FutbolServisi/GolSayisiKaydet");
         _myOperationsList.add(_oper);
         if (_myOperations.get("golSayisiKaydet") == null) {
@@ -88,53 +88,53 @@ public class FutbolServisiSOAPSkeleton implements deneme.FutbolServisi_PortType,
         }
         ((java.util.List)_myOperations.get("golSayisiKaydet")).add(_oper);
         _params = new org.apache.axis.description.ParameterDesc [] {
-            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNumarasi"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
+            new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "TakimNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false), 
         };
-        _oper = new org.apache.axis.description.OperationDesc("takimBilgisiGetir", _params, new javax.xml.namespace.QName("", "TakimBilgisi"));
-        _oper.setReturnType(new javax.xml.namespace.QName("deneme", "TakimTipi"));
-        _oper.setElementQName(new javax.xml.namespace.QName("", "TakimBilgisiGetir"));
-        _oper.setSoapAction("http://tempuri.org/FutbolServisi/TakimBilgisiGetir");
+        _oper = new org.apache.axis.description.OperationDesc("takimGetir", _params, new javax.xml.namespace.QName("", "TakimGetirYaniti"));
+        _oper.setReturnType(new javax.xml.namespace.QName("FutbolServisi", "TakimYaniti"));
+        _oper.setElementQName(new javax.xml.namespace.QName("FutbolServisi", "TakimGetir"));
+        _oper.setSoapAction("http://tempuri.org/FutbolServisi/TakimGetir");
         _myOperationsList.add(_oper);
-        if (_myOperations.get("takimBilgisiGetir") == null) {
-            _myOperations.put("takimBilgisiGetir", new java.util.ArrayList());
+        if (_myOperations.get("takimGetir") == null) {
+            _myOperations.put("takimGetir", new java.util.ArrayList());
         }
-        ((java.util.List)_myOperations.get("takimBilgisiGetir")).add(_oper);
+        ((java.util.List)_myOperations.get("takimGetir")).add(_oper);
     }
 
     public FutbolServisiSOAPSkeleton() {
-        this.impl = new deneme.FutbolServisiSOAPImpl();
+        this.impl = new FutbolServisi_pkg.FutbolServisiSOAPImpl();
     }
 
-    public FutbolServisiSOAPSkeleton(deneme.FutbolServisi_PortType impl) {
+    public FutbolServisiSOAPSkeleton(FutbolServisi_pkg.FutbolServisi_PortType impl) {
         this.impl = impl;
     }
-    public KarsilasmaDizisi karsilasmaBilgisiGetir(int takimNumarasi) throws java.rmi.RemoteException
+    public FutbolServisi_pkg.KarsilasmaYaniti karsilasmaGetir(int takimNo) throws java.rmi.RemoteException
     {
-        KarsilasmaDizisi ret = impl.karsilasmaBilgisiGetir(takimNumarasi);
+        FutbolServisi_pkg.KarsilasmaYaniti ret = impl.karsilasmaGetir(takimNo);
         return ret;
     }
 
-    public boolean takimKaydet(int takimNo, java.lang.String takimAdi, deneme.FutbolcuTipi[] futbolcular) throws java.rmi.RemoteException
+    public FutbolServisi_pkg.ServisYaniti takimKaydet(int takimNo, java.lang.String takimAdi, FutbolServisi_pkg.Futbolcu[] futbolcular) throws java.rmi.RemoteException
     {
-        boolean ret = impl.takimKaydet(takimNo, takimAdi, futbolcular);
+        FutbolServisi_pkg.ServisYaniti ret = impl.takimKaydet(takimNo, takimAdi, futbolcular);
         return ret;
     }
 
-    public boolean karsilasmaKaydet(int haftaNo, int evSahibiTakimNo, int misafirTakimNo, int evSahibiGolSayisi, int misafirGolSayisi) throws java.rmi.RemoteException
+    public FutbolServisi_pkg.ServisYaniti karsilasmaKaydet(int haftaNo, int evSahibiTakimNo, int misafirTakimNo, int evSahibiGolSayisi, int misafirGolSayisi) throws java.rmi.RemoteException
     {
-        boolean ret = impl.karsilasmaKaydet(haftaNo, evSahibiTakimNo, misafirTakimNo, evSahibiGolSayisi, misafirGolSayisi);
+        FutbolServisi_pkg.ServisYaniti ret = impl.karsilasmaKaydet(haftaNo, evSahibiTakimNo, misafirTakimNo, evSahibiGolSayisi, misafirGolSayisi);
         return ret;
     }
 
-    public boolean golSayisiKaydet(int haftaNo, int takimNo, int formaNo, int golSayisi) throws java.rmi.RemoteException
+    public FutbolServisi_pkg.ServisYaniti golSayisiKaydet(int haftaNo, int takimNo, int formaNo, int golSayisi) throws java.rmi.RemoteException
     {
-        boolean ret = impl.golSayisiKaydet(haftaNo, takimNo, formaNo, golSayisi);
+        FutbolServisi_pkg.ServisYaniti ret = impl.golSayisiKaydet(haftaNo, takimNo, formaNo, golSayisi);
         return ret;
     }
 
-    public deneme.TakimTipi takimBilgisiGetir(int takimNumarasi) throws java.rmi.RemoteException
+    public FutbolServisi_pkg.TakimYaniti takimGetir(int takimNo) throws java.rmi.RemoteException
     {
-        deneme.TakimTipi ret = impl.takimBilgisiGetir(takimNumarasi);
+        FutbolServisi_pkg.TakimYaniti ret = impl.takimGetir(takimNo);
         return ret;
     }
 

@@ -1,13 +1,13 @@
 /**
- * TakimTipi.java
+ * Takim.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package deneme;
+package FutbolServisi_pkg;
 
-public class TakimTipi  implements java.io.Serializable {
+public class Takim  implements java.io.Serializable {
     private java.lang.String takimAdi;
 
     private int takimKodu;
@@ -22,12 +22,12 @@ public class TakimTipi  implements java.io.Serializable {
 
     private int yedigiGolSayisi;
 
-    private deneme.FutbolcuTipi[] futbolcular;
+    private FutbolServisi_pkg.Futbolcu[] futbolcular;
 
-    public TakimTipi() {
+    public Takim() {
     }
 
-    public TakimTipi(
+    public Takim(
            java.lang.String takimAdi,
            int takimKodu,
            int galibiyetSayisi,
@@ -35,7 +35,7 @@ public class TakimTipi  implements java.io.Serializable {
            int maglubiyetSayisi,
            int attigiGolSayisi,
            int yedigiGolSayisi,
-           deneme.FutbolcuTipi[] futbolcular) {
+           FutbolServisi_pkg.Futbolcu[] futbolcular) {
            this.takimAdi = takimAdi;
            this.takimKodu = takimKodu;
            this.galibiyetSayisi = galibiyetSayisi;
@@ -45,7 +45,7 @@ public class TakimTipi  implements java.io.Serializable {
            this.yedigiGolSayisi = yedigiGolSayisi;
            this.futbolcular = futbolcular;
     }
-    
+
     public void golSayisiGuncelle(int attigiGolSayisi, int yedigiGolSayisi) {
     	this.attigiGolSayisi += attigiGolSayisi;
     	this.yedigiGolSayisi += yedigiGolSayisi;
@@ -58,9 +58,8 @@ public class TakimTipi  implements java.io.Serializable {
     	}
     }
 
-
     /**
-     * Gets the takimAdi value for this TakimTipi.
+     * Gets the takimAdi value for this Takim.
      * 
      * @return takimAdi
      */
@@ -70,7 +69,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the takimAdi value for this TakimTipi.
+     * Sets the takimAdi value for this Takim.
      * 
      * @param takimAdi
      */
@@ -80,7 +79,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the takimKodu value for this TakimTipi.
+     * Gets the takimKodu value for this Takim.
      * 
      * @return takimKodu
      */
@@ -90,7 +89,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the takimKodu value for this TakimTipi.
+     * Sets the takimKodu value for this Takim.
      * 
      * @param takimKodu
      */
@@ -100,7 +99,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the galibiyetSayisi value for this TakimTipi.
+     * Gets the galibiyetSayisi value for this Takim.
      * 
      * @return galibiyetSayisi
      */
@@ -110,7 +109,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the galibiyetSayisi value for this TakimTipi.
+     * Sets the galibiyetSayisi value for this Takim.
      * 
      * @param galibiyetSayisi
      */
@@ -120,7 +119,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the beraberlikSayisi value for this TakimTipi.
+     * Gets the beraberlikSayisi value for this Takim.
      * 
      * @return beraberlikSayisi
      */
@@ -130,7 +129,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the beraberlikSayisi value for this TakimTipi.
+     * Sets the beraberlikSayisi value for this Takim.
      * 
      * @param beraberlikSayisi
      */
@@ -140,7 +139,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the maglubiyetSayisi value for this TakimTipi.
+     * Gets the maglubiyetSayisi value for this Takim.
      * 
      * @return maglubiyetSayisi
      */
@@ -150,7 +149,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the maglubiyetSayisi value for this TakimTipi.
+     * Sets the maglubiyetSayisi value for this Takim.
      * 
      * @param maglubiyetSayisi
      */
@@ -160,7 +159,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the attigiGolSayisi value for this TakimTipi.
+     * Gets the attigiGolSayisi value for this Takim.
      * 
      * @return attigiGolSayisi
      */
@@ -170,7 +169,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the attigiGolSayisi value for this TakimTipi.
+     * Sets the attigiGolSayisi value for this Takim.
      * 
      * @param attigiGolSayisi
      */
@@ -180,7 +179,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the yedigiGolSayisi value for this TakimTipi.
+     * Gets the yedigiGolSayisi value for this Takim.
      * 
      * @return yedigiGolSayisi
      */
@@ -190,7 +189,7 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the yedigiGolSayisi value for this TakimTipi.
+     * Sets the yedigiGolSayisi value for this Takim.
      * 
      * @param yedigiGolSayisi
      */
@@ -200,28 +199,28 @@ public class TakimTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the futbolcular value for this TakimTipi.
+     * Gets the futbolcular value for this Takim.
      * 
      * @return futbolcular
      */
-    public deneme.FutbolcuTipi[] getFutbolcular() {
+    public FutbolServisi_pkg.Futbolcu[] getFutbolcular() {
         return futbolcular;
     }
 
 
     /**
-     * Sets the futbolcular value for this TakimTipi.
+     * Sets the futbolcular value for this Takim.
      * 
      * @param futbolcular
      */
-    public void setFutbolcular(deneme.FutbolcuTipi[] futbolcular) {
+    public void setFutbolcular(FutbolServisi_pkg.Futbolcu[] futbolcular) {
         this.futbolcular = futbolcular;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof TakimTipi)) return false;
-        TakimTipi other = (TakimTipi) obj;
+        if (!(obj instanceof Takim)) return false;
+        Takim other = (Takim) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -279,58 +278,58 @@ public class TakimTipi  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(TakimTipi.class, true);
+        new org.apache.axis.description.TypeDesc(Takim.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("deneme", "TakimTipi"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("FutbolServisi", "Takim"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("takimAdi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "TakimAdi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "takimAdi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("takimKodu");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "TakimKodu"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "takimKodu"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("galibiyetSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "GalibiyetSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "galibiyetSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("beraberlikSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "BeraberlikSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "beraberlikSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("maglubiyetSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "MaglubiyetSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "maglubiyetSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("attigiGolSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "AttigiGolSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "attigiGolSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("yedigiGolSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "YedigiGolSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "yedigiGolSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("futbolcular");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "Futbolcular"));
-        elemField.setXmlType(new javax.xml.namespace.QName("deneme", "FutbolcuTipi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "futbolcular"));
+        elemField.setXmlType(new javax.xml.namespace.QName("FutbolServisi", "Futbolcu"));
         elemField.setNillable(false);
-        elemField.setItemQName(new javax.xml.namespace.QName("deneme", "Futbolcu"));
+        elemField.setItemQName(new javax.xml.namespace.QName("FutbolServisi", "futbolcu"));
         typeDesc.addFieldDesc(elemField);
     }
 

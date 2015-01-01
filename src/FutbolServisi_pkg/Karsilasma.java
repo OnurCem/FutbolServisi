@@ -1,30 +1,30 @@
 /**
- * KarsilasmaTipi.java
+ * Karsilasma.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package deneme;
+package FutbolServisi_pkg;
 
-public class KarsilasmaTipi  implements java.io.Serializable {
+public class Karsilasma  implements java.io.Serializable {
     private int haftaNo;
 
-    private deneme.TakimTipi evSahibiTakim;
+    private FutbolServisi_pkg.Takim evSahibiTakim;
 
-    private deneme.TakimTipi misafirTakim;
+    private FutbolServisi_pkg.Takim misafirTakim;
 
     private int evSahibiTakimGolSayisi;
 
     private int misafirTakimGolSayisi;
 
-    public KarsilasmaTipi() {
+    public Karsilasma() {
     }
 
-    public KarsilasmaTipi(
+    public Karsilasma(
            int haftaNo,
-           deneme.TakimTipi evSahibiTakim,
-           deneme.TakimTipi misafirTakim,
+           FutbolServisi_pkg.Takim evSahibiTakim,
+           FutbolServisi_pkg.Takim misafirTakim,
            int evSahibiTakimGolSayisi,
            int misafirTakimGolSayisi) {
            this.haftaNo = haftaNo;
@@ -36,7 +36,7 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the haftaNo value for this KarsilasmaTipi.
+     * Gets the haftaNo value for this Karsilasma.
      * 
      * @return haftaNo
      */
@@ -46,7 +46,7 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the haftaNo value for this KarsilasmaTipi.
+     * Sets the haftaNo value for this Karsilasma.
      * 
      * @param haftaNo
      */
@@ -56,47 +56,47 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the evSahibiTakim value for this KarsilasmaTipi.
+     * Gets the evSahibiTakim value for this Karsilasma.
      * 
      * @return evSahibiTakim
      */
-    public deneme.TakimTipi getEvSahibiTakim() {
+    public FutbolServisi_pkg.Takim getEvSahibiTakim() {
         return evSahibiTakim;
     }
 
 
     /**
-     * Sets the evSahibiTakim value for this KarsilasmaTipi.
+     * Sets the evSahibiTakim value for this Karsilasma.
      * 
      * @param evSahibiTakim
      */
-    public void setEvSahibiTakim(deneme.TakimTipi evSahibiTakim) {
+    public void setEvSahibiTakim(FutbolServisi_pkg.Takim evSahibiTakim) {
         this.evSahibiTakim = evSahibiTakim;
     }
 
 
     /**
-     * Gets the misafirTakim value for this KarsilasmaTipi.
+     * Gets the misafirTakim value for this Karsilasma.
      * 
      * @return misafirTakim
      */
-    public deneme.TakimTipi getMisafirTakim() {
+    public FutbolServisi_pkg.Takim getMisafirTakim() {
         return misafirTakim;
     }
 
 
     /**
-     * Sets the misafirTakim value for this KarsilasmaTipi.
+     * Sets the misafirTakim value for this Karsilasma.
      * 
      * @param misafirTakim
      */
-    public void setMisafirTakim(deneme.TakimTipi misafirTakim) {
+    public void setMisafirTakim(FutbolServisi_pkg.Takim misafirTakim) {
         this.misafirTakim = misafirTakim;
     }
 
 
     /**
-     * Gets the evSahibiTakimGolSayisi value for this KarsilasmaTipi.
+     * Gets the evSahibiTakimGolSayisi value for this Karsilasma.
      * 
      * @return evSahibiTakimGolSayisi
      */
@@ -106,7 +106,7 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the evSahibiTakimGolSayisi value for this KarsilasmaTipi.
+     * Sets the evSahibiTakimGolSayisi value for this Karsilasma.
      * 
      * @param evSahibiTakimGolSayisi
      */
@@ -116,7 +116,7 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
 
     /**
-     * Gets the misafirTakimGolSayisi value for this KarsilasmaTipi.
+     * Gets the misafirTakimGolSayisi value for this Karsilasma.
      * 
      * @return misafirTakimGolSayisi
      */
@@ -126,7 +126,7 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
 
     /**
-     * Sets the misafirTakimGolSayisi value for this KarsilasmaTipi.
+     * Sets the misafirTakimGolSayisi value for this Karsilasma.
      * 
      * @param misafirTakimGolSayisi
      */
@@ -136,8 +136,8 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof KarsilasmaTipi)) return false;
-        KarsilasmaTipi other = (KarsilasmaTipi) obj;
+        if (!(obj instanceof Karsilasma)) return false;
+        Karsilasma other = (Karsilasma) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -181,37 +181,37 @@ public class KarsilasmaTipi  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(KarsilasmaTipi.class, true);
+        new org.apache.axis.description.TypeDesc(Karsilasma.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("deneme", "KarsilasmaTipi"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("FutbolServisi", "Karsilasma"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("haftaNo");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "HaftaNo"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "haftaNo"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("evSahibiTakim");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "EvSahibiTakim"));
-        elemField.setXmlType(new javax.xml.namespace.QName("deneme", "TakimTipi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "evSahibiTakim"));
+        elemField.setXmlType(new javax.xml.namespace.QName("FutbolServisi", "Takim"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("misafirTakim");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "MisafirTakim"));
-        elemField.setXmlType(new javax.xml.namespace.QName("deneme", "TakimTipi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "misafirTakim"));
+        elemField.setXmlType(new javax.xml.namespace.QName("FutbolServisi", "Takim"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("evSahibiTakimGolSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "EvSahibiTakimGolSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "evSahibiTakimGolSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("misafirTakimGolSayisi");
-        elemField.setXmlName(new javax.xml.namespace.QName("deneme", "MisafirTakimGolSayisi"));
+        elemField.setXmlName(new javax.xml.namespace.QName("FutbolServisi", "misafirTakimGolSayisi"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
