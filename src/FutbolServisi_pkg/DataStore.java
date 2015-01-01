@@ -1,5 +1,9 @@
 package FutbolServisi_pkg;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class DataStore {
@@ -105,7 +109,7 @@ public class DataStore {
 		}
 	}
 	
-	public Futbolcu futbolcuBul(int takimNo, int formaNo) {
+	private Futbolcu futbolcuBul(int takimNo, int formaNo) {
 		clearErrorMessage();
 		Takim takim = takimBul(takimNo);
 		if (takim != null) {
@@ -137,34 +141,6 @@ public class DataStore {
 		return sonucDizisi;
 	}
 	
-	public void tumVerileriListele() {
-		System.out.println("\nTakimlar\n"
-				+ "Ad" + "               " + "Kod" + "   " + "Galibiyet" + "   "
-				+ "Maglubiyet" + "   " + "Beraberlik" + "   " + "Attigi Gol" + "   " + "Yedigi Gol");
-		for (Takim t : takimlar) {
-			System.out.format("%-17s%-6d%-12d%-13d%-13d%-13d%-10d\n",
-					t.getTakimAdi(),
-					t.getTakimKodu(),
-					t.getGalibiyetSayisi(),
-					t.getMaglubiyetSayisi(),
-					t.getBeraberlikSayisi(),
-					t.getAttigiGolSayisi(),
-					t.getYedigiGolSayisi());
-		}
-		
-		System.out.println("\n\nKarsilasmalar\n"
-				+ "Hafta No" + "               " + "Ev Sahibi" + "           " + "Misafir" + "             "
-				+ "Ev Sahibi Gol Sayisi" + "   " + "Misafir Gol Sayisi");
-		for (Karsilasma k : karsilasmalar) {
-			System.out.format("%-23d%-20s%-20s%-23d%-18d\n",
-					k.getHaftaNo(),
-					k.getEvSahibiTakim().getTakimAdi(),
-					k.getMisafirTakim().getTakimAdi(),
-					k.getEvSahibiTakimGolSayisi(),
-					k.getMisafirTakimGolSayisi());
-		}
-	}
-	
 	private boolean futbolcuKontrolEt(Futbolcu[] futbolcular, int takimNo) {
 		clearErrorMessage();
 		for (Futbolcu f : futbolcular) {
@@ -191,5 +167,43 @@ public class DataStore {
 	
 	private void clearErrorMessage() {
 		error = "";
+	}
+	
+	public void tumVerileriListele() {
+		if (!takimlar.isEmpty()) {
+			String logTakimlar = "Takimlar\n"
+					+ "Ad" + "                   " + "Kod" + "   " + "Galibiyet" + "   "
+					+ "Maglubiyet" + "   " + "Beraberlik" + "   " + "Attigi Gol" + "   " + "Yedigi Gol" + "\n";
+	
+			for (Takim t : takimlar) {
+				logTakimlar += String.format("%-21s%-6d%-12d%-13d%-13d%-13d%-10d\n",
+						t.getTakimAdi(),
+						t.getTakimKodu(),
+						t.getGalibiyetSayisi(),
+						t.getMaglubiyetSayisi(),
+						t.getBeraberlikSayisi(),
+						t.getAttigiGolSayisi(),
+						t.getYedigiGolSayisi());
+			}
+			
+			FileLogger.write(FileLogger.INFO, logTakimlar);
+		}
+		
+		if (!karsilasmalar.isEmpty()) {
+			String logKarsilasmalar = "Karsilasmalar\n"
+					+ "Hafta No" + "   " + "Ev Sahibi" + "            " + "Misafir" + "              "
+					+ "Ev Sahibi Gol Sayisi" + "   " + "Misafir Gol Sayisi" + "\n";
+			
+			for (Karsilasma k : karsilasmalar) {
+				logKarsilasmalar += String.format("%-11d%-21s%-21s%-23d%-18d\n",
+						k.getHaftaNo(),
+						k.getEvSahibiTakim().getTakimAdi(),
+						k.getMisafirTakim().getTakimAdi(),
+						k.getEvSahibiTakimGolSayisi(),
+						k.getMisafirTakimGolSayisi());
+			}
+			
+			FileLogger.write(FileLogger.INFO, logKarsilasmalar);
+		}
 	}
 }
