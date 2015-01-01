@@ -1,9 +1,5 @@
 package FutbolServisi_pkg;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class DataStore {
@@ -174,6 +170,10 @@ public class DataStore {
 			String logTakimlar = "Takimlar\n"
 					+ "Ad" + "                   " + "Kod" + "   " + "Galibiyet" + "   "
 					+ "Maglubiyet" + "   " + "Beraberlik" + "   " + "Attigi Gol" + "   " + "Yedigi Gol" + "\n";
+			
+			String logFutbolcular = "Futbolcular\n"
+					+ "Ad" + "                   " + "Takim Kodu" + "   " + "Forma No" + "   "
+					+ "Attigi Gol Sayisi" + "\n";
 	
 			for (Takim t : takimlar) {
 				logTakimlar += String.format("%-21s%-6d%-12d%-13d%-13d%-13d%-10d\n",
@@ -184,9 +184,18 @@ public class DataStore {
 						t.getBeraberlikSayisi(),
 						t.getAttigiGolSayisi(),
 						t.getYedigiGolSayisi());
+				
+				for (Futbolcu f : t.getFutbolcular()) {
+					logFutbolcular += String.format("%-21s%-13d%-11d%-17d\n",
+							f.getAdSoyad(),
+							f.getTakimKodu(),
+							f.getFormaNumarasi(),
+							f.getAttigiGolSayisi());
+				}
 			}
 			
 			FileLogger.write(FileLogger.INFO, logTakimlar);
+			FileLogger.write(FileLogger.INFO, logFutbolcular);
 		}
 		
 		if (!karsilasmalar.isEmpty()) {

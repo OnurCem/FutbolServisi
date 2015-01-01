@@ -21,6 +21,7 @@ public class FileLogger {
  
 			if (!file.exists()) {
 				file.createNewFile();
+				addHeader(file);
 			}
  
 			FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
@@ -45,6 +46,7 @@ public class FileLogger {
  
 			if (!file.exists()) {
 				file.createNewFile();
+				addHeader(file);
 			}
  
 			FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
@@ -55,6 +57,19 @@ public class FileLogger {
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
+		}
+	}
+	
+	private static void addHeader(File file) {
+		try {
+			String header = "Futbol Servisi Log Dosyasi";
+			FileWriter fw;
+			fw = new FileWriter(file.getAbsoluteFile(), true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(header);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }

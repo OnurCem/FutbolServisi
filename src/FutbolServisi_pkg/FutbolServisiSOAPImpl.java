@@ -22,12 +22,13 @@ public class FutbolServisiSOAPImpl implements FutbolServisi_pkg.FutbolServisi_Po
 		Karsilasma[] karsilasmalar = ds.karsilasmaBul(takimNo);
 		
 		if (karsilasmalar.length == 0) {
-			FileLogger.write(FileLogger.ERROR, ds.getErrorMessage());
 			yanit.setDurum(false);
 			yanit.setMesaj(takimNo + " numarali takim icin karsilasma bulunamadi");
+			FileLogger.write(FileLogger.ERROR, yanit.getMesaj());
 		} else {
 			yanit.setDurum(true);
 			yanit.setMesaj(takimNo + " numarali takim icin " + karsilasmalar.length + " karsilasma bulundu");
+			FileLogger.write(FileLogger.INFO, yanit.getMesaj());
 		}
 
 		yanit.setKarsilasmalar(karsilasmalar);
@@ -45,10 +46,11 @@ public class FutbolServisiSOAPImpl implements FutbolServisi_pkg.FutbolServisi_Po
     		ds.tumVerileriListele();
     		yanit.setDurum(true);
     		yanit.setMesaj(takimAdi + " takimi eklendi");
+    		FileLogger.write(FileLogger.INFO, yanit.getMesaj());
     	} else {
-    		FileLogger.write(FileLogger.ERROR, ds.getErrorMessage());
     		yanit.setDurum(false);
     		yanit.setMesaj(ds.getErrorMessage());
+    		FileLogger.write(FileLogger.ERROR, yanit.getMesaj());
     	}
     	return yanit;
     }
@@ -64,10 +66,11 @@ public class FutbolServisiSOAPImpl implements FutbolServisi_pkg.FutbolServisi_Po
     		ds.tumVerileriListele();
     		yanit.setDurum(true);
     		yanit.setMesaj(haftaNo + ". hafta karsilasmasi eklendi");
+    		FileLogger.write(FileLogger.INFO, yanit.getMesaj());
     	} else {
-    		FileLogger.write(FileLogger.ERROR, ds.getErrorMessage());
     		yanit.setDurum(false);
     		yanit.setMesaj(ds.getErrorMessage());
+    		FileLogger.write(FileLogger.ERROR, yanit.getMesaj());
     	}
     	return yanit;
     }
@@ -82,10 +85,11 @@ public class FutbolServisiSOAPImpl implements FutbolServisi_pkg.FutbolServisi_Po
     	if (ds.golSayisiEkle(haftaNo, takimNo, formaNo, golSayisi)) {
     		yanit.setDurum(true);
     		yanit.setMesaj(formaNo + " forma numarali futbolcunun gol sayisi guncellendi");
+    		FileLogger.write(FileLogger.INFO, yanit.getMesaj());
     	} else {
-    		FileLogger.write(FileLogger.ERROR, ds.getErrorMessage());
     		yanit.setDurum(false);
     		yanit.setMesaj(ds.getErrorMessage());
+    		FileLogger.write(FileLogger.ERROR, yanit.getMesaj());
     	}
     	return yanit;
     }
@@ -101,10 +105,11 @@ public class FutbolServisiSOAPImpl implements FutbolServisi_pkg.FutbolServisi_Po
     		yanit.setDurum(true);
     		yanit.setMesaj(takimNo + " numarali takim bulundu");
     		yanit.setTakim(takim);
+    		FileLogger.write(FileLogger.INFO, yanit.getMesaj());
     	} else {
-    		FileLogger.write(FileLogger.ERROR, ds.getErrorMessage());
     		yanit.setDurum(false);
     		yanit.setMesaj("Takim bulunamadi: " + takimNo);
+    		FileLogger.write(FileLogger.ERROR, yanit.getMesaj());
     	}
     	
     	return yanit;
