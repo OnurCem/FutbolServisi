@@ -14,7 +14,7 @@ package FutbolServisi_pkg;
 
 /**
  * Class to store all methods for service 
- * @author furkan
+ * @author onurcemsenel@gmail.com
  *
  */
 public class FutbolServisiSOAPImpl implements FutbolServisi_pkg.FutbolServisi_PortType{
